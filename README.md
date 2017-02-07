@@ -1,6 +1,11 @@
 django-fileman handles user-uploaded static files (images, media, documents)
 and integrates with tinymce
 
+[![Circle CI](https://circleci.com/gh/gregplaysguitar/django-fileman.svg?style=svg)](https://circleci.com/gh/gregplaysguitar/django-fileman)
+[![codecov](https://codecov.io/gh/gregplaysguitar/django-fileman/branch/master/graph/badge.svg)](https://codecov.io/gh/gregplaysguitar/django-fileman)
+[![Latest Version](https://img.shields.io/pypi/v/django-fileman.svg?style=flat)](https://pypi.python.org/pypi/django-fileman/)
+
+
 Requirements
 ------------
 
