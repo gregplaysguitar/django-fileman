@@ -1,0 +1,13 @@
+{% extends "fileman/base.html" %}
+
+{% block fileman_breadcrumbs %}
+  &rsaquo; Upload
+{% endblock %}
+
+{% block fileman_content %}
+  <form action="{{ request.path }}" method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit" value="Upload">
+  </form>
+{% endblock %}

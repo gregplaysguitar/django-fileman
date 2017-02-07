@@ -1,0 +1,55 @@
+@charset "UTF-8";
+ul.fileman-list {
+  max-width: 800px; }
+  ul.fileman-list,
+  ul.fileman-list ul {
+    list-style: none;
+    margin: 0 0 20px;
+    padding: 0; }
+  ul.fileman-list li {
+    padding: 0; }
+  ul.fileman-list ul {
+    padding-left: 20px; }
+  ul.fileman-list .delete,
+  ul.fileman-list .rename {
+    float: right;
+    visibility: hidden;
+    margin-right: 5px;
+    margin-left: 15px; }
+  ul.fileman-list .rename {
+    color: #000; }
+  ul.fileman-list .delete {
+    color: #f00; }
+    ul.fileman-list .delete:hover {
+      color: #cc0000; }
+  ul.fileman-list .item-wrap {
+    padding: 5px; }
+  ul.fileman-list .item-wrap:hover {
+    background: #fafafa; }
+    ul.fileman-list .item-wrap:hover .delete,
+    ul.fileman-list .item-wrap:hover .rename {
+      visibility: visible; }
+  ul.fileman-list .directory > .item-wrap a.item::before {
+    display: inline-block;
+    width: 20px; }
+  ul.fileman-list .directory > .item-wrap a.item::before {
+    content: '▶︎'; }
+  ul.fileman-list .directory.active > .item-wrap a.item::before {
+    content: '▼'; }
+  ul.fileman-list li {
+    list-style: none;
+    margin: 0;
+    border-top: 1px solid #e5e5e5; }
+    ul.fileman-list li.extras {
+      padding: 5px 0; }
+      ul.fileman-list li.extras a {
+        display: inline-block;
+        margin-right: 10px;
+        color: #aaa; }
+        ul.fileman-list li.extras a:hover {
+          color: #919191; }
+  ul.fileman-list.popup .delete,
+  ul.fileman-list.popup .rename {
+    display: none; }
+
+/*# sourceMappingURL=fileman.css.map */

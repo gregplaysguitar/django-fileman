@@ -1,0 +1,11 @@
+{% extends "fileman/base.html" %}
+
+{% block fileman_breadcrumbs %}
+  &rsaquo; List
+{% endblock %}
+
+{% block fileman_content %}
+  <ul class="fileman-list {% if is_popup %}popup{% endif %}">
+    {{ results|safe }}
+  </ul>
+{% endblock %}

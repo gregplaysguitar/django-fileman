@@ -1,0 +1,92 @@
+$off-white: #fafafa;
+$light-grey: #e5e5e5;
+$red: #f00;
+$black: #000;
+$grey: #aaa;
+
+ul.fileman-list {
+  max-width: 800px;
+
+  &,
+  ul {
+    list-style: none;
+    margin: 0 0 20px;
+    padding: 0;
+  }
+  li {
+    padding: 0;
+  }
+  ul {
+    padding-left: 20px;
+  }
+
+  .delete,
+  .rename {
+    float: right;
+    visibility: hidden;
+    margin-right: 5px;
+    margin-left: 15px;
+  }
+  .rename {
+    color: $black;
+  }
+  .delete {
+    color: $red;
+    &:hover {
+      color: darken($red, 10);
+    }
+  }
+  .item-wrap {
+    padding: 5px;
+  }
+  .item-wrap:hover {
+    background: $off-white;
+    .delete,
+    .rename {
+      visibility: visible;
+    }
+  }
+  .directory > .item-wrap a.item {
+    &::before {
+      display: inline-block;
+      width: 20px;
+    }
+  }
+  .directory > .item-wrap a.item {
+    &::before {
+      content: '▶︎';
+    }
+  }
+  .directory.active > .item-wrap a.item {
+    &::before {
+      content: '▼';
+    }
+  }
+  li {
+    list-style: none;
+    margin: 0;
+    border-top: 1px solid $light-grey;
+
+    &.extras {
+      // border: 0;
+      padding: 5px 0;
+
+      a {
+        display: inline-block;
+        margin-right: 10px;
+        color: $grey;
+
+        &:hover {
+          color: darken($grey, 10);
+        }
+      }
+    }
+  }
+
+  &.popup {
+    .delete,
+    .rename {
+      display: none;
+    }
+  }
+}

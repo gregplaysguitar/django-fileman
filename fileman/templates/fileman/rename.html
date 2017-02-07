@@ -1,0 +1,14 @@
+{% extends "fileman/base.html" %}
+
+{% block fileman_breadcrumbs %}
+  &rsaquo; Rename
+{% endblock %}
+
+{% block fileman_content %}
+  <form action="{{ request.path }}" method="POST">
+    {% csrf_token %}
+    <p>Old name: {{ old_name }}</p>
+    {{ form.as_p }}
+    <input type="submit" value="Rename">
+  </form>
+{% endblock %}

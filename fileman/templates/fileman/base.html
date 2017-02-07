@@ -1,0 +1,104 @@
+{% extends "admin/change_list.html" %}
+{% load i18n admin_static %}
+
+{% block extrahead %}
+{{ block.super }}
+<link href="{% static 'fileman/fileman.css' %}" rel="stylesheet"
+  type="text/css" media="screen,projection">
+{% endblock %}
+
+{% block breadcrumbs %}
+  <div class="breadcrumbs">
+    <a href="{% url 'admin:index' %}">{% trans 'Home' %}</a>
+    &rsaquo;
+    <a href="{% url 'admin:app_list' app_label='fileman' %}">Uploads  </a>
+    {% block fileman_breadcrumbs %}{% endblock %}
+  </div>
+{% endblock %}
+
+{% block coltype %}flex{% endblock %}
+
+{% block extrastyle %}
+  {{ block.super }}
+  <link rel="stylesheet" type="text/css"
+        href="{% static 'fileman/fileman.css' %}">
+{% endblock %}
+
+{% block content %}
+  <div id="content-main">
+    <ul class="object-tools">
+      <!--
+      <li>
+        <a href="#" class="addlink">
+          {% blocktrans %}Upload file{% endblocktrans %}
+        </a>
+      </li>
+      -->
+    </ul>
+
+    <div class="module {# filtered #}" id="changelist">
+      {% comment %}
+      {% block search %}
+      <div id="toolbar">
+        <form id="changelist-search" method="get">
+          <div><!-- DIV needed for valid HTML -->
+            <label for="searchbar"><img src="{% static 'admin/img/search.svg' %}"
+                   alt="Search"></label>
+            <input type="text" size="40" name="q" value="" id="searchbar">
+            <input type="submit" value="Search">
+          </div>
+        </form>
+      </div>
+      {% endblock %}
+      {% endcomment %}
+
+      {% comment %}
+      <div id="changelist-filter">
+        <h2>{% trans 'Filter' %}</h2>
+      </div>
+      {% endcomment %}
+
+      <div class="results">
+        {% block fileman_content %}{% endblock %}
+
+        {% comment %}
+        <ul>
+          {% for result in results %}
+            <li>
+              <a href="{{ result.url }}">
+                {{ result.name }}
+              </a>
+              {% if result.sub_results %}
+                {% for }
+              {% endif %}
+            </li>
+          {% endfor %}
+        </ul>
+
+        <table id="result_list">
+          <thead>
+            <tr>
+              <th scope="col" class="action-checkbox-column">
+                <div class="text"><span><input type="checkbox" id="action-toggle"></span></div>
+                <div class="clear"></div>
+              </th>
+              <th scope="col" class="sortable column-email">
+                <div class="text"><a href="?o=1">Email address</a></div>
+                <div class="clear"></div>
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="row1">
+              <td class="action-checkbox"><input class="action-select" name="_selected_action" type="checkbox" value="70"></td>
+              <th class="field-email"><a href="/admin/auth/user/70/change/">joshuabullennz@gmail.com</a></th>
+            </tr>
+          </tbody>
+        </table>
+        {% endcomment %}
+
+
+      </div>
+    </div>
+  </div>
+{% endblock %}

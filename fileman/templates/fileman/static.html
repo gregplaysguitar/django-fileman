@@ -1,0 +1,9 @@
+{% load static %}
+
+<script type="text/javascript">
+  window.fileman = {
+    TINYMCE_DIALOG_URL: '{% url "admin:fileman_upload_changelist" %}?_popup=1'
+  };
+</script>
+<script type="text/javascript" src="{% static 'fileman/fileman.js' %}">
+</script>

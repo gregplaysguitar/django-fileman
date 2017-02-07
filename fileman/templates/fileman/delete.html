@@ -1,0 +1,29 @@
+{% extends "fileman/base.html" %}
+
+{% block fileman_breadcrumbs %}
+  &rsaquo; Delete
+{% endblock %}
+
+{% block bodyclass %}delete-confirmation{% endblock %}
+
+{% block fileman_content %}
+  <p>
+    Are you sure you want to delete <strong>{{ path }}</strong>?
+    {% if delete_results %}
+      The following subfiles will also be deleted:
+    {% endif %}
+  </p>
+
+  {% if delete_results %}
+    <ul class="fileman-delete-list">
+      {{ delete_results|safe }}
+    </ul>
+  {% endif %}
+
+  <form action="{{ request.path }}" method="POST">
+    {% csrf_token %}
+    <input type="submit" value="Yes, I'm sure" class="delete-button">
+    <a class="button cancel-link" onclick="window.history.back(); return false;">
+      No, take me back</a>
+  </form>
+{% endblock %}

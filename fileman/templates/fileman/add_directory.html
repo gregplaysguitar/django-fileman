@@ -1,0 +1,13 @@
+{% extends "fileman/base.html" %}
+
+{% block fileman_breadcrumbs %}
+  &rsaquo; Add directory
+{% endblock %}
+
+{% block fileman_content %}
+  <form action="{{ request.path }}" method="POST">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit" value="Add directory">
+  </form>
+{% endblock %}
