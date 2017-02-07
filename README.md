@@ -31,7 +31,7 @@ Installation
 Usage
 -----
 
-You should now have a "Fileman" section in your django admin which allows you to 
+You should now have am "Uploads" section in your django admin which allows you to 
 manage/upload files under your `FILEMAN_DIRECTORY`. 
 
 TinyMCE
