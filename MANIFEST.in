@@ -1,2 +1,4 @@
 include LICENSE.txt
 include README.md
+recursive-include fileman/static *
+recursive-include fileman/templates *
