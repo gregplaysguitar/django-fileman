@@ -60,7 +60,7 @@ template:
       tinymce.init({
         selector: 'textarea',
         plugins : 'link media image',
-        file_picker_callback: window.fileman.tinymceFilePickerCallback
+        file_picker_callback: window.fileman.tinymceFilePickerCallback,
         toolbar: 'link media image'
       });
     </script>
