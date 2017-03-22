@@ -19,7 +19,7 @@ DIR = getattr(settings, 'FILEMAN_DIRECTORY', 'user')
 
 
 def get_full_path(path):
-    return os.path.join(settings.MEDIA_ROOT, DIR, path)
+    return os.path.normpath(os.path.join(settings.MEDIA_ROOT, DIR, path))
 
 
 def get_url(path):
