@@ -20,7 +20,8 @@
     </ul>
   {% endif %}
 
-  <form action="{{ request.path }}" method="POST">
+  <form action="{% url 'admin:fileman_upload_delete' %}?path={{ path }}"
+        method="POST">
     {% csrf_token %}
     <input type="submit" value="Yes, I'm sure" class="delete-button">
     <a class="button cancel-link" onclick="window.history.back(); return false;">

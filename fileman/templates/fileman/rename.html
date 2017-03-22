@@ -5,7 +5,8 @@
 {% endblock %}
 
 {% block fileman_content %}
-  <form action="{{ request.path }}" method="POST">
+  <form action="{% url 'admin:fileman_upload_rename' %}?path={{ path }}"
+        method="POST">
     {% csrf_token %}
     <p>Old name: {{ old_name }}</p>
     {{ form.as_p }}
