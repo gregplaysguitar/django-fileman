@@ -19,7 +19,7 @@ DIR = getattr(settings, 'FILEMAN_DIRECTORY', 'user')
 
 
 def get_full_path(path):
-    return os.path.join(settings.MEDIA_ROOT, DIR, path)
+    return os.path.normpath(os.path.join(settings.MEDIA_ROOT, DIR, path))
 
 
 def get_url(path):
@@ -266,7 +266,7 @@ def add_directory(request, path=''):
     if request.method == 'POST':
         form = AddDirectoryForm(request.POST)
         if form.is_valid():
-            dirname = form.cleaned_data['name'].replace('/', '-')
+            dirname = form.cleaned_data['name']
             new_dir = os.path.join(path, dirname)
             full_dir = get_full_path(new_dir)
 
