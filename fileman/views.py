@@ -266,7 +266,7 @@ def add_directory(request, path=''):
     if request.method == 'POST':
         form = AddDirectoryForm(request.POST)
         if form.is_valid():
-            dirname = form.cleaned_data['name'].replace('/', '-')
+            dirname = form.cleaned_data['name']
             new_dir = os.path.join(path, dirname)
             full_dir = get_full_path(new_dir)
 
