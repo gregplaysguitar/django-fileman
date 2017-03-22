@@ -134,8 +134,12 @@ def read_dir(cur_path, expand=False):
 
 
 def index(request, path=''):
-    if not os.path.exists(get_full_path(path)):
-        raise Http404('Path not found')
+    full_path = get_full_path(path)
+    if not os.path.exists(full_path):
+        if path:
+            raise Http404('Path not found')
+        else:
+            raise Exception('FILEMAN_DIRECTORY does not exist')
 
     is_popup = request.GET.get('_popup', False)
     raw_results = read_dir('', path)
