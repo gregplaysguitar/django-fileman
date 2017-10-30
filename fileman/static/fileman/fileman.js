@@ -9,15 +9,22 @@
 
     });
 
-    // hook into iframe's jquery
     win.$el.find('iframe').on('load', function () {
       var subWindow = win.$el.find('iframe')[0].contentWindow;
+      var links = subWindow.document.querySelectorAll('a.item.file')
+      for (var i = 0; i < links.length; i++) {
+        links[0].addEventListener('click', function () {
+          pickerCallback(this.getAttribute('href'));
+          win.close();
+          return false;
+        });
+      }
 
-      subWindow.$('a.item.file').on('click', function () {
-        pickerCallback(this.getAttribute('href'));
-        win.close();
-        return false;
-      });
+      // subWindow.$('a.item.file').on('click', function () {
+      //   pickerCallback(this.getAttribute('href'));
+      //   win.close();
+      //   return false;
+      // });
     });
 
     // // Provide file and text for the link dialog
