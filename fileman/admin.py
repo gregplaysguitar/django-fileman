@@ -1,15 +1,10 @@
 # -*- coding: utf-8 -*-
 
 from django.contrib import admin
-from django.db import models
 from django.conf.urls import url
 
 from . import views
-
-
-class Upload(models.Model):
-    class Meta:
-        managed = False
+from .models import Upload
 
 
 @admin.register(Upload)
