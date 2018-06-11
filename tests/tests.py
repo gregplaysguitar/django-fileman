@@ -2,7 +2,10 @@ import os
 
 from django.test import TestCase, Client
 from django.contrib.auth.models import User
-from django.core.urlresolvers import reverse
+try:
+    from django.urls import reverse
+except ImportError:
+    from django.core.urlresolvers import reverse
 
 from fileman.views import read_dir, get_full_path
 
